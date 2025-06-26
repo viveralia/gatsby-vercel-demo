@@ -7,6 +7,64 @@
   Gatsby Minimal TypeScript Starter
 </h1>
 
+# Gatsby + Vercel Backend Demo
+
+This is a Gatsby project with a Vercel serverless backend API.
+
+## Project Structure
+
+- `src/pages/index.tsx` - Frontend page that fetches users
+- `src/utils/client.ts` - API client for making requests to the backend
+- `src/utils/types.ts` - TypeScript type definitions
+- `api/users.ts` - Vercel serverless function (backend API)
+
+## How It Works
+
+1. **Backend**: The `api/users.ts` file is a Vercel serverless function that:
+
+   - Fetches users from JSONPlaceholder API
+   - Handles CORS properly
+   - Includes error handling
+   - Returns JSON data
+
+2. **Frontend**: The Gatsby app:
+
+   - Uses `client.ts` to make API calls to `/api/users`
+   - Displays users in a list
+   - Handles loading and error states
+
+3. **Deployment**: When deployed to Vercel:
+   - Gatsby builds the static site
+   - The `api/` folder becomes serverless functions
+   - Both frontend and backend are served from the same domain
+
+## Development
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run develop
+
+# Build for production
+npm run build
+```
+
+## API Endpoints
+
+- `GET /api/users` - Returns a list of users from JSONPlaceholder
+
+## Environment Variables
+
+For local development, you can set:
+
+- `GATSBY_API_URL` - API base URL (defaults to current domain)
+
+## Deployment
+
+Deploy to Vercel and the API will automatically be available at `your-domain.vercel.app/api/users`.
+
 ## 🚀 Quick start
 
 1.  **Create a Gatsby site.**
@@ -20,7 +78,7 @@
 
 2.  **Start developing.**
 
-    Navigate into your new site’s directory and start it up.
+    Navigate into your new site's directory and start it up.
 
     ```shell
     cd my-gatsby-site/
