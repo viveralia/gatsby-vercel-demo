@@ -3,7 +3,8 @@
   "functions": {
     "api/users.ts": {
       "memory": 2048,
-      "maxDuration": 30
+      "maxDuration": 30,
+      "runtime": "@vercel/node"
     }
   }
 }
